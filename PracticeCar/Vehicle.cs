@@ -8,6 +8,7 @@ namespace PracticeCar
 {
     internal class Vehicle
     {
+        //Atributos de autos
         public string? Type { get; set; }
         public DateOnly Year { get; set; }
         public string? Brand { get; set; }

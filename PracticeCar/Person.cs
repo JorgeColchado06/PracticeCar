@@ -15,7 +15,7 @@ namespace PracticeCar
     internal class Person
     {
 
-        public DateOnly today = new DateOnly(2022, 09, 14);
+        public DateOnly today = new DateOnly(2022, 09, 24);
         public int KeyCode { get; set; }
         public string? Name { get; set; }
         public string? Surname { get; set; }
@@ -37,7 +37,7 @@ namespace PracticeCar
         private int counter = 0;
         private int counterCar = 0;
 
-        //Methods
+        //Metodos
         public void receiveLicense(License licenseMethod)
         {
             LicenseSet.Add(licenseMethod);
@@ -107,10 +107,10 @@ namespace PracticeCar
         }
 
 
-        //Printer functions
+        //Funciones de la impresora
         public void printUserData(Person people)
         {
-            Console.WriteLine("\n" + "Especificaciones del usario:" + "\n");
+            Console.WriteLine("\n" + "Especificaciones del usuario:" + "\n");
             Console.WriteLine("Key Code: " + people.KeyCode + "\n" +
                 "Name: " + people.Name + "\n" +
                 "SurName: " + people.Surname + "\n" +
@@ -138,7 +138,7 @@ namespace PracticeCar
             counter = 0;
             if (VehicleSet.Count == 0)
             {
-                Console.Write("Vaco, no tienes ningun auto" + "\n" + "\n");
+                Console.Write("Vacio, no tienes ningun auto" + "\n" + "\n");
             }
             foreach (Vehicle car in VehicleSet)
             {
@@ -148,7 +148,7 @@ namespace PracticeCar
         }
 
 
-        //Functions
+        //Funciones
         //Instancia de la fecha (today)
         License date = new License();
 
@@ -158,9 +158,12 @@ namespace PracticeCar
             if (Year >= 90) //Checador de edad
             {
                 Console.WriteLine("\n" + "--------- Lo sentimos, no podemos proporcionar una licencia a un anciano -----------" + "\n");
+
             }
+            
             else
             {
+
                 if (firstLicense == true)
                 {
                     receiveLicense(license);
@@ -188,13 +191,16 @@ namespace PracticeCar
         {
             if (Gender == "Girl")
             {
-                if (car.Color == "Red")
+                if (car.Color == "Rojo")
                 {
                     receiveCar(car);
+                   
+
                 }
                 else
                 {
                     Console.WriteLine("\n" + "--------- A las chicas no les gustan los coches que no son rojos  ----------" + "\n");
+
                 }
             }
             else
@@ -226,12 +232,12 @@ namespace PracticeCar
                     }
                     else
                     {
-                        Console.WriteLine("\n" + "------- Function error: Car " + car.Brand + " didn't found on " + Name + " to quit :( -----------" + "\n");
+                        Console.WriteLine("\n" + "------- Function error: Car " + car.Brand + " didn't found on " + Name + " to quit  -----------" + "\n");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("\n" + "-------- Function error: You cannot cancel " + car.Brand + " without a valid license ------" + "\n");
+                    Console.WriteLine("\n" + "-------- Error de funcionamiento: No se puede cancelar el coche" + car.Brand + " sin una licencia valida ------" + "\n");
                 }
             }
             else if (car.Type == "B")
