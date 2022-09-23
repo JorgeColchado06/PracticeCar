@@ -31,5 +31,19 @@ namespace PracticeCar
 
             return licenseCustom;
         }
+        public bool Validate(License lic)
+        {
+        if (lic.ExpirationDate > today)
+            {
+                return true;   
+            }
+            else
+            {
+                return false;   
+            }
+        
+
+        }
+
     }
 }
